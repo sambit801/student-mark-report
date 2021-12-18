@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+				<meta charset="UTF-8">
+				<title>Student Report Card</title>
+				<style>
+								body{
+								height:100%;
+								width:100%;
+								}
+								.container{
+								height:700px;
+								width:700px;
+								margin:50px 100px auto 100px;		background:linear-gradient(156deg,crimson,aqua,springgreen);
+					box-shadow: 0px 2px 2px rgba(0.2, 0.3, 0.6, 0.4);					
+								}
+								.minicontainer{
+								margin-left:100px;
+								margin-right:100px;
+								padding-top:30px;
+								color:black;		
+								}
+								input{
+	background: white;
+  border-radius: 6px;
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  padding: 5px 5px;
+			border-bottom: 2px solid rgba(0, 0, 0, 0.8);
+
+								}
+			h1{
+						fontsize:16px;
+						text-align: center;
+   		line-height: 40px;	
+   		top: -22px;
+   		border-bottom: 1px solid black;  
+								}
+			button{
+		color:Black;
+		margin-left:100px;	background:linear-gradient(156deg,aqua,springgreen);
+			}
+				</style>
+</head>
+<body>
+				<div class="container">
+								<div class="minicontainer">
+				<h1>Student Marks</h1>
+				<!-- html Subject -->
+				<div>
+				<label><b>HTML:- </b></label>
+					<input id="html" type="number"placeholder="Mark">
+				</div><br><br>
+				<!-- CSS Subject -->
+				<div>
+								<label><b>CSS:- </b></label>
+			<input id="css" type="number"placeholder="Mark">
+				</div><br><br>
+				<!-- Javascript Subject-->
+				<div>
+				<label><b>Jscript:- </b></label>
+				<input id="js"type="number"placeholder="mark">
+</div><br><br>
+<!-- Reactjs Subject -->
+<div>
+				<label><b>Reactjs:- </b></label>
+				<input id="react"type="number"placeholder="Mark">
+</div><br><br>
+<!-- Nodejs subject -->
+<div>
+				<label><b></label>Nodejs:- </b></label>
+				<input id="node"type="number"placeholder="Mark">
+</div><br><br>
+<!-- Button -->
+<div>
+				<button style="padding:5px;"onClick="calculate()">Calculate</button>
+</div>
+<!-- heading -->
+<div class="finalrepo">
+<h1>Mark Report</h1>
+<p>Secured Mark :- <span id="sm"></span></p>
+<p>---------------------------------------</p>
+<p>Percentage Mark :- <span id="pm"></span></p>
+<p>-----------------------------------------</p>
+<p>Remark :- <span id="rm"></span></p>
+</div>
+</div>
+</div>
+<script>
+				function calculate(){
+	var a = parseInt(document.getElementById('html').value);
+	var b = parseInt(document.getElementById('css').value);	
+	var c = parseInt(document.getElementById('js').value);
+	var d = parseInt(document.getElementById('react').value);
+	var e = parseInt(document.getElementById('node').value);
+	
+	if(a>100 || b>100|| c>100|| d>100 || e>100){
+	alert("Enter the value which less than 100");
+	}else{
+	<!-- Total mark calculation -->
+	var secureMark=a+b+c+d+e;	document.getElementById('sm').innerHTML=secureMark;
+	<!-- percentage calculation -->
+	var percent=secureMark/500*100;	document.getElementById('pm').innerHTML=percent;
+	<!-- Remark -->
+	if(percent>60){
+	document.getElementById('rm').innerHTML="Student Score is more than 60% 🎉🎉🎉";
+	}
+	}
+	
+				}
+</script>				
+</body>
+</html>
